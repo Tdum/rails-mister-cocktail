@@ -11,6 +11,8 @@ ingredients = JSON.parse(ingredients_serialized)
 
 puts "Creating ingredients"
 ingredients['drinks'].each do |ingredient|
-  output = Ingredient.create!(name: ingredient['strIngredient1'])
-  puts "Created ingredient #{output.name}"
+  Ingredient.create!(name: ingredient['strIngredient1'])
+  puts "Created ingredient #{ingredient['strIngredient1']}"
 end
+
+puts "#{ingredients['drinks'].count} have been created"
